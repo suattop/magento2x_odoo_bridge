@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data noupdate='1'>
+       
+        <record forcecreate='True'  model="multi.channel.sale" id="magento2x_channel" >
+            <field name="name">Magento 2x</field>
+            <field name="channel">magento2x</field>
+            <field name="magento2x_username">admin</field>
+            <field name="magento2x_password">password</field>
+            <field name="magento2x_base_uri">http://example.com</field>
+            <field name="color">#f46f25</field>
+            <field name="image" type="base64" file="magento2x_odoo_bridge/static/src/img/magento2x-72x72.png"/>
+            <field name="debug">disable</field>
+        </record>
+
+        <record id="pending_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento2x_odoo_bridge.magento2x_channel"/>
+            <field name="channel_state">pending</field>
+            <field name="default_order_state">True</field>
+            <field name="odoo_order_state">draft</field>
+        </record>
+
+        <record id="processing_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento2x_odoo_bridge.magento2x_channel"/>
+            <field name="channel_state">processing</field>
+            <field name="odoo_order_state">sale</field>
+            <field name="odoo_create_invoice">True</field>
+            <field name="odoo_set_invoice_state">open</field>
+            <field name="odoo_ship_order">True</field>
+        </record>
+
+        <record id="canceled_order_states" forcecreate='True' model="channel.order.states">
+            <field name="channel_id" ref="magento2x_odoo_bridge.magento2x_channel"/>
+            <field name="channel_state">canceled</field>
+            <field name="odoo_order_state">cancelled</field>
+        </record>
+
+        <record id="done_order_states" forcecreate='True' model="channel.order.states">
+           <field name="channel_id" ref="magento2x_odoo_bridge.magento2x_channel"/>
+           <field name="channel_state">complete</field>
+           <field name="odoo_order_state">done</field>
+           <field name="odoo_create_invoice">True</field>
+           <field name="odoo_set_invoice_state">paid</field>
+           <field name="odoo_ship_order">True</field>
+       </record>
+    </data>
+</odoo>

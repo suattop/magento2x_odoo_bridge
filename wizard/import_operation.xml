@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+	<data>
+		<record id="import_wizard_form" model="ir.ui.view">
+			<field name="name">import.operation.form</field>
+			<field name="model">import.operation</field>
+			<field name="inherit_id" ref="odoo_multi_channel_sale.import_wizard_form"/>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='filters']" postion="inside">
+					<group>
+						<field
+							name  ="magento2x_filter_type"
+							attrs ="{'invisible':[('channel','!=','magento2x')]}"
+							widget="radio"
+						/>
+					</group>
+					<!-- <group
+						attrs="
+							{
+								'invisible': ['|',('channel','!=','magento2x'),('magento2x_filter_type','!=','id')],
+								'required' : [('magento2x_filter_type','=','id')],
+							}
+						"
+					>
+						<field name="shopify_object_id"/>
+					</group> -->
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|', ('magento2x_filter_type','!=','date_range'), ('object','in',['product.category','product.attribute'])]}">
+						<field name="magento2x_start_date"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|', ('magento2x_filter_type','!=','date_range'), ('object','in',['product.category','product.attribute'])]}">
+						<field name="magento2x_end_data"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|',('magento2x_filter_type','!=','id_range'), ('object','in',['product.category','product.attribute'])]}">
+						<field name="magento2x_start_id"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|', ('magento2x_filter_type','!=','id_range'), ('object','in',['product.category','product.attribute'])]}">
+						<field name="magento2x_end_id"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|',('magento2x_filter_type','!=','category_id'),('object', '!=', 'product.category')]}">
+						<field name="magento2x_category_id"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|',('magento2x_filter_type','!=','customer_id'),('object', '!=', 'res.partner')]}">
+						<field name="magento2x_customer_email"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','magento2x'),'|',('magento2x_filter_type','!=','order_state'),('object','!=','sale.order')]}">
+						<field name="magento2x_order_state"/>
+					</group>
+					<!-- <group attrs="{'invisible':['|',('channel','!=','shopify'),('shopify_filter_type','!=','since_id')]}">
+						<field name="shopify_since_id"/>
+					</group>
+					<group attrs="{'invisible':['|',('channel','!=','shopify'),('shopify_filter_type','!=','since_id')]}">
+						<field name="shopify_limit"/>
+					</group> -->
+				</xpath>
+				<xpath expr="//form" postion="inside">
+					<!-- <p attrs="{'invisible': ['|',('channel','!=','shopify'),('shopify_filter_type','!=','all')]}">
+						Note: Will import objects of 'All' the time period.
+					</p>
+					<p attrs="{'invisible': ['|',('channel','!=','shopify'),('shopify_filter_type','!=','id')]}">
+						Note: Will import object of particular 'By ID' entered.
+					</p> -->
+					<p attrs="{'invisible': ['|',('channel','!=','magento2x'),('magento2x_filter_type','!=','data_range')]}">
+						Note: Will import objects that are updated during the after 'Updated From' and before 'Updated Till'.
+					</p>
+					<!-- <p attrs="{'invisible': ['|',('channel','!=','shopify'),('shopify_filter_type','!=','since_id')]}">
+						Note: Will import number (entered in 'Limit') of objects that after 'From ID' entered.
+					</p> -->
+				</xpath>
+			</field>
+		</record>
+
+		<record id="open_import_wizard_action" model="ir.actions.act_window">
+			<field name="name">Import Wizard</field>
+			<field name="res_model">import.operation</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+	</data>
+</odoo>

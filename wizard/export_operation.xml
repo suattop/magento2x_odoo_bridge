@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data>
+        <record id="export_wizard_form_inherit" model="ir.ui.view">
+            <field name="name">export.operation.form</field>
+            <field name="model">export.operation</field>
+            <field name="inherit_id" ref="odoo_multi_channel_sale.export_wizard_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='channel_id']" position="after">
+					<field name="operation" attrs="{'invisible': [('channel','not in',['magento2x'])]}"/>
+					<!-- <p attrs="{'invisible': ['|',('channel','not in',['magento2x']),('operation','not in',['update'])]}" 
+				>If selected operation update then it will update all those selected objects who has need sync yes in them.</p> -->
+				</xpath>
+				<xpath expr="//button[@name='cancel']" position="before">
+					<button
+						attrs="{'invisible': ['|',('channel','not in',['magento2x']),('operation','not in',['update'])]}"
+						string="Confirm Update"
+						type  ="object"
+						name  ="export_button"
+						class ="oe_highlight"
+					/>
+				</xpath>
+				<xpath expr="//button[@name='export_button']" position="attributes">
+					<attribute name='attrs'>{'invisible':[('operation','not in', 'export')]}</attribute>
+				</xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

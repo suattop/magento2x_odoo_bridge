@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <record id="magento2x_odoo_bridge.attributes_set" model="ir.ui.view">
+        <field name="name">magento.attributes.set.form</field>
+        <field name="model">magento.attributes.set</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name='set_name' required='1'/>
+                            <field name='store_id' required='1'/>
+                        </group>
+                        <group>
+                        <field name='channel_id' widget='selection' required='1'/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='Attribute'
+                            string='Attribute(s)'>
+                        <group>
+                            <field name='attribute_ids' nolabel='1' />
+                        </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="attribute_sets_tree">
+        <field name="name">magento.attributes.set.tree</field>
+        <field name="model">magento.attributes.set</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="channel_id"/>
+                <field name="store_id"/>
+                <field name="set_name"/>
+            </tree>
+        </field>
+      </record>
+
+    <record id="magento2x_odoo_bridge.multi_channel_view_form" model="ir.ui.view">
+        <field name="name">multi.channel.sale.inherited</field>
+        <field name="model">multi.channel.sale</field>
+        <field name="inherit_id" ref="odoo_multi_channel_sale.multi_channel_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='Operation']" position='attributes'>
+                            <attribute name='attrs'>{'invisible':True}</attribute>
+            </xpath>
+            <group name="credentials" position='inside'>
+                <group attrs= "{'invisible':[('channel','!=', 'magento2x')]}">
+                    <field
+                        name="magento2x_base_uri"  widget="url"
+                        attrs= "{'required':[('channel','==', 'magento2x')],'readonly':[('state','=', 'validate')]}"/>
+                    <field
+                        name="magento2x_username"
+                        attrs= "{'required':[('channel','==', 'magento2x')],'readonly':[('state','=', 'validate')]}"/>
+                    <field
+                        password='1'
+                        name="magento2x_password"
+                        attrs= "{'required':[('channel','==', 'magento2x')],'readonly':[('state','=', 'validate')]}"/>
+                    <field
+                        name="magento2x_store_code"
+                        attrs= "{'required':[('channel','==', 'magento2x')],'readonly':[('state','=', 'validate')]}"
+                        />
+                    <field name='magento2x_is_child_store'
+                      options="{'no_create': True}"
+                      attrs= "{'readonly':[('state','=', 'validate')]}"/>
+                    <field name='magneto2x_default_store_id'
+                      domain= "[('id','!=',active_id),('state','=','validate'),('magento2x_is_child_store','!=',True)]"
+                      options="{'no_create': True}"
+                      attrs= "{
+                          'readonly':[('state','=', 'validate')],
+                          'invisible':[('magento2x_is_child_store','!=', True)],
+                          'required':[('magento2x_is_child_store','=', True)],
+                          }"/>
+                    <!-- <field
+                        name="magento2x_store_config"
+                        attrs= "{'required':[('channel','==', 'magento2x')],'readonly':[('state','=', 'validate')]}"/> -->
+                </group>
+            </group>
+            <xpath expr="//page[@name = 'configuration']" position="after">
+                <page string="Magento2x" name= 'magento2x'
+                      attrs= "{'invisible':[('channel','!=', 'magento2x')]}">
+                    <group>
+                        <group>
+                            <field name='magento2x_default_product_categ_id'
+                            options="{
+                                'no_create': True
+                            }"
+                                attrs= "{'readonly':[('state','=', 'validate')]}"/>
+
+                        </group>
+                        <group>
+
+                            <field name='magento2x_default_product_set_id'
+                            options="{
+                                'no_create': True
+                            }"
+                                attrs= "{'readonly':[('state','=', 'validate')]}"/>
+                            <field name='magento2x_default_tax_type'
+                                attrs= "{'readonly':[('state','=', 'validate')]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_attribute_sets" model="ir.actions.act_window">
+        <field name="name">Attribute Sets</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">magento.attributes.set</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="magento2x_odoo_bridge.attribute_sets_tree"/>
+    </record>
+
+    <menuitem  id="magento2x_odoo_bridge.menu_root"
+          name="Magento2x"
+          parent="odoo_multi_channel_sale.menu_id_multi_channel_configuration"
+    />
+    <menuitem  id="magento2x_odoo_bridge.menu_attribute_sets"
+        name="Attribute Sets"
+        parent="magento2x_odoo_bridge.menu_root"
+        action="magento2x_odoo_bridge.action_attribute_sets"/>
+
+</odoo>

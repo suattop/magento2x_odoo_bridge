@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <svg id="Icon" xmlns="http://www.w3.org/2000/svg" width="100%"  viewBox="0 0 502 346">
+          <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+        <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+           <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+              <rdf:Description rdf:about=""/>
+           </rdf:RDF>
+        </x:xmpmeta>           
+        <?xpacket end="w"?></metadata>
+        <defs>
+            <style>
+              .cls-1 {
+                fill: #dfdfdf;
+              }
+
+              .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+                fill-rule: evenodd;
+              }
+
+              .cls-2 {
+                fill: #cdcdcd;
+              }
+
+              .cls-3 {
+                fill: #fff;
+              }
+
+              .cls-4 {
+                fill: none;
+                stroke: #000;
+                stroke-width: 1px;
+              }
+
+              .cls-5 {
+                fill: #3d4561;
+              }
+
+              .cls-6 {
+                fill: #e85757;
+              }
+            </style>
+          </defs>
+          <path id="Rectangle_23_copy" data-name="Rectangle 23 copy" class="cls-1" d="M302.182,57l199.83,60.714V176L202.268,346,0,231.858V176Z"/>
+          <path class="cls-2" d="M0,177L202,289v57L0,232V177Z"/>
+          <path class="cls-3" d="M303,0L501,116,203,289,0,177Z"/>
+          <g>
+            <path class="cls-4" d="M298,25l46,26L292,82,246,55Z"/>
+            <path class="cls-5" d="M356,59c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C459,118,357.83,59.233,356,59Z"/>
+            <path id="Shape_511_copy" data-name="Shape 511 copy" class="cls-5" d="M344,66c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C447,125,345.83,66.233,344,66Z"/>
+            <path id="Shape_511_copy_2" data-name="Shape 511 copy 2" class="cls-5" d="M330,73c-1.83-.233-7.445.309-6,5l51,30s8.462,0.77,9-4C384,104,331.83,73.233,330,73Z"/>
+            <path class="cls-6" d="M300,32s-5.3-2.794-8,1l-2,18-31,1s-7.151,1.558-1,5l32-1-2,17s3.277,6.841,8,0l1-18h32s4.919-2.024,2-5H298Z"/>
+          </g>
+          <g id="Group_12_copy" data-name="Group 12 copy">
+            <path class="cls-4" d="M224,70l46,26-52,31-46-27Z"/>
+            <path class="cls-5" d="M282,104c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C385,163,283.83,104.233,282,104Z"/>
+            <path id="Shape_511_copy-2" data-name="Shape 511 copy" class="cls-5" d="M270,111c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C373,170,271.83,111.233,270,111Z"/>
+            <path id="Shape_511_copy_2-2" data-name="Shape 511 copy 2" class="cls-5" d="M256,118c-1.83-.233-7.445.309-6,5l51,30s8.462,0.77,9-4C310,149,257.83,118.233,256,118Z"/>
+            <path class="cls-6" d="M226,77s-5.3-2.794-8,1l-2,18-31,1s-7.151,1.558-1,5l32-1-2,17s3.277,6.841,8,0l1-18h32s4.919-2.024,2-5H224Z"/>
+          </g>
+          <g id="Group_12_copy_2" data-name="Group 12 copy 2">
+            <path class="cls-4" d="M147,115l46,26-52,31L95,145Z"/>
+            <path class="cls-5" d="M205,149c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C308,208,206.83,149.233,205,149Z"/>
+            <path id="Shape_511_copy-3" data-name="Shape 511 copy" class="cls-5" d="M193,156c-1.83-.233-7.445.309-6,5l100,58s8.462,0.77,9-4C296,215,194.83,156.233,193,156Z"/>
+            <path id="Shape_511_copy_2-3" data-name="Shape 511 copy 2" class="cls-5" d="M179,163c-1.83-.233-7.445.309-6,5l51,30s8.462,0.77,9-4C233,194,180.83,163.233,179,163Z"/>
+            <path class="cls-6" d="M149,122s-5.3-2.794-8,1l-2,18-31,1s-7.151,1.558-1,5l32-1-2,17s3.277,6.841,8,0l1-18h32s4.919-2.024,2-5H147Z"/>
+          </g>
+</svg>

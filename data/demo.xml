@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+<odoo>
+    <data noupdate='1'>
+        <record model="crm.team" id="team_sales_magento2x">
+            <field name="name">Magento2 Sales</field>
+            <field name="member_ids" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+        
+        <record model="multi.channel.sale" id="magento2x_odoo_bridge.magento2x_channel" >
+            <field name="discount_product_id" ref='odoo_multi_channel_sale.discount_product'/>
+            <field name="sku_sequence_id" ref='odoo_multi_channel_sale.product_sequence_id'/>
+            <field name="delivery_product_id" ref='odoo_multi_channel_sale.delivery_product'/>
+            <field name="crm_team_id" ref='team_sales_magento2x'/>
+            <field name="debug">enable</field>
+        </record>
+    </data>
+</odoo>

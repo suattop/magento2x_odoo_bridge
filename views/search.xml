@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+	<record id="order_feed_view_search" model="ir.ui.view">
+		<field name="name">order.feed</field>
+		<field name="model">order.feed</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.order_feed_view_search"/>
+		<field name="arch" type="xml">
+			<field  name="store_id"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('channel_id.channel','=','magento2x')]" help="Mangeto 2.x Order Feed"/>
+			</field>
+		</field>
+	</record>
+
+
+	<record id="partner_feed_view_search" model="ir.ui.view">
+		<field name="name">partner.feed</field>
+		<field name="model">partner.feed</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.partner_feed_view_search"/>
+		<field name="arch" type="xml">
+			<field  name="store_id"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('channel_id.channel','=','magento2x')]" help="Mangeto 2.x Order Feed"/>
+			</field>
+		</field>
+	</record>
+
+
+
+	<record id="category_feed_view_search" model="ir.ui.view">
+		<field name="name">category.feed</field>
+		<field name="model">category.feed</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.category_feed_view_search"/>
+		<field name="arch" type="xml">
+			<field  name="store_id"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('channel_id.channel','=','magento2x')]" help="Mangeto 2.x Order Feed"/>
+			</field>
+		</field>
+	</record>
+
+
+	<record id="product_feed_view_search" model="ir.ui.view">
+		<field name="name">product.feed</field>
+		<field name="model">product.feed</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.product_feed_view_search"/>
+		<field name="arch" type="xml">
+			<field  name="store_id"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('channel_id.channel','=','magento2x')]" help="Mangeto 2.x Order Feed"/>
+			</field>
+		</field>
+	</record>
+
+	<record id="shipping_feed_view_search" model="ir.ui.view">
+		<field name="name">shipping.feed</field>
+		<field name="model">shipping.feed</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.shipping_feed_view_search"/>
+		<field name="arch" type="xml">
+			<field  name="store_id"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('channel_id.channel','=','magento2x')]" help="Mangeto 2.x Order Feed"/>
+			</field>
+		</field>
+	</record>
+
+	<record id="channel_account_mappings_search" model="ir.ui.view">
+		<field name="name">channel.account.mappings.search</field>
+		<field name="model">channel.account.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_account_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+
+	<record id="channel_account_journal_mappings_search" model="ir.ui.view">
+		<field name="name">channel.account.journal.mappings.search</field>
+		<field name="model">channel.account.journal.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_account_journal_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+
+	<record id="channel_category_mappings_search" model="ir.ui.view">
+		<field name="name">channel.category.mappings.search</field>
+		<field name="model">channel.category.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_category_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+
+	<record id="channel_order_mappings_search" model="ir.ui.view">
+		<field name="name">channel.order.mappings.search</field>
+		<field name="model">channel.order.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_order_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+
+	<record id="channel_parnter_mappings_search" model="ir.ui.view">
+		<field name="name">channel.partner.mappings.search</field>
+		<field name="model">channel.partner.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_parnter_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+	<record id="channel_pricelist_mappings_search_view" model="ir.ui.view">
+		<field name="name">channel.pricelist.mappings.search</field>
+		<field name="model">channel.pricelist.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_pricelist_mappings_search_view"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+
+	<record id="channel_shipping_mappings_search" model="ir.ui.view">
+		<field name="name">channel.shipping.mappings.search</field>
+		<field name="model">channel.shipping.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.channel_shipping_mappings_search"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+	<record id="search_template_mappings" model="ir.ui.view">
+		<field name="name">channel.template.mappings.search</field>
+		<field name="model">channel.template.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.search_template_mappings"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+
+	<record id="search_product_mappings" model="ir.ui.view">
+		<field name="name">channel.product.mappings.search</field>
+		<field name="model">channel.product.mappings</field>
+		<field name="inherit_id" ref="odoo_multi_channel_sale.search_product_mappings"/>
+		<field name="arch" type="xml">
+			<filter  name="need_sync"  position='after'>
+				<filter icon="terp-check" name="magento2x" string="Magento2x"
+						domain="[('ecom_store','=','magento2x')]" help="Mangeto 2.x Mapping"/>
+			</filter>
+		</field>
+	</record>
+</odoo>

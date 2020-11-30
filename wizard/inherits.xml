@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- "License URL : <https://store.webkul.com/license.html/>" -->
+
+<odoo>
+    <record id="import_magento2x_templates_form" model="ir.ui.view">
+        <field name="name">export.magento2x.templates.form</field>
+        <field name="model">export.templates</field>
+        <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_templates_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='channel_id']" position="after">
+                <field
+                    name='magento2x_default_product_set_id'
+                    attrs="{'invisible':[('channel','not in',['magento2x'])], 'required':[('channel','in',['magento2x'])]}"
+                    domain="[('channel_id','=',channel_id)]"
+                />
+             </xpath>
+            <xpath expr="//button[@name='cancel']" position="before">
+                <button
+                    attrs="{'invisible': ['|',('channel','not in',['magento2x']),('operation','not in',['export'])]}"
+                    name="magento2x_export_templates"
+                    string="Export"
+                    type="object"
+                    class="oe_highlight"
+                />
+                <button
+                    attrs="{'invisible': ['|',('channel','not in',['magento2x']),('operation','not in',['update'])]}"
+                    name="magento2x_export_templates"
+                    string="Update"
+                    type="object"
+                    class="oe_highlight"
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="export_odoo_categories_form" model="ir.ui.view">
+        <field name="name">export.magento2x.categories.form</field>
+        <field name="model">export.categories</field>
+        <field name="inherit_id" ref="odoo_multi_channel_sale.export_odoo_categories_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='cancel']" position="before">
+                <button
+                    attrs="{ 'invisible':['|',('channel','not in',['magento2x']),('operation','!=','export')]}"
+                    name="magento2x_export_categories"
+                    string="Export"
+                    type="object"
+                    class="oe_highlight"
+                />
+                <button
+                    attrs="{ 'invisible':['|', ('channel','not in',['magento2x']),('operation','!=','update')]}"
+                    name="magento2x_export_categories"
+                    string="Update"
+                    type="object"
+                    class="oe_highlight"
+                />
+            </xpath>
+        </field> 
+    </record>
+</odoo>

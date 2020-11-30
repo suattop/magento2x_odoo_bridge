@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+all_attr,magento.attributes.set.all,model_magento_attributes_set,,1,0,0,0
+user_attr,magento.attributes.set.user,model_magento_attributes_set,odoo_multi_channel_sale.group_multi_channel_user,1,1,1,0
+manager_attr,magento.attributes.set.manager,model_magento_attributes_set,odoo_multi_channel_sale.group_multi_channel_admin,1,1,1,1

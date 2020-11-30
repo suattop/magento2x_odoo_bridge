@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="iPad" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 574 373">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>                                                                                   
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1 {
+        fill: #555;
+      }
+
+      .cls-1, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #3e3e3e;
+      }
+
+      .cls-3 {
+        fill: #333;
+      }
+
+      .cls-4 {
+        fill: #777;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #222;
+      }
+
+      .cls-7 {
+        fill: #e85757;
+      }
+
+      .cls-8 {
+        fill: #f46767;
+      }
+
+      .cls-9 {
+        fill: #ff8484;
+      }
+
+      .cls-10 {
+        fill: #fc0;
+      }
+
+      .cls-11 {
+        fill: #ffdb4b;
+      }
+
+      .cls-12 {
+        fill: #ffe57c;
+      }
+
+      .cls-13 {
+        fill: #6dc85b;
+      }
+
+      .cls-14 {
+        fill: #87e076;
+      }
+
+      .cls-15 {
+        fill: #98ef87;
+      }
+    </style>
+  </defs>
+  <path id="Shape_6_copy_2" data-name="Shape 6 copy 2" class="cls-1" d="M226,335v38L0,243V219l102-9Z"/>
+  <path class="cls-2" d="M0,219L224,347v24L0,243V219Z"/>
+  <path class="cls-1" d="M226,348L574,147v25L226,373V348Z"/>
+  <path class="cls-3" d="M350,17L553.41,135.051,574,147l-16.841,9.727L226,348,0,219Z"/>
+  <path id="Shape_6_copy" data-name="Shape 6 copy" class="cls-4" d="M328,53L514,160,247,314,62,207Z"/>
+  <path id="Shape_6_copy_3" data-name="Shape 6 copy 3" class="cls-5" d="M329,58L509,162,247,314,68,210Z"/>
+  <path class="cls-6" d="M400.784,68.339l61.95,35.938a2.537,2.537,0,0,1,.922,3.457,2.511,2.511,0,0,1-3.44.927l-61.95-35.938a2.537,2.537,0,0,1-.922-3.457A2.511,2.511,0,0,1,400.784,68.339Z"/>
+  <g id="Group_10_copy_2" data-name="Group 10 copy 2">
+    <path class="cls-7" d="M161,71l41,24v95l-41-24V71Z"/>
+    <path id="Rectangle_36_copy" data-name="Rectangle 36 copy" class="cls-8" d="M243,72L202.013,94.938V190L243,166.536V72Z"/>
+    <path class="cls-9" d="M161,71l41-23,41,24L202.232,95.3Z"/>
+  </g>
+  <g id="Group_10_copy" data-name="Group 10 copy">
+    <path class="cls-10" d="M243,46l41.768,24.3V214L243,190V46Z"/>
+    <path id="Rectangle_36_copy-2" data-name="Rectangle 36 copy" class="cls-11" d="M325,47L284.013,69.938V214L325,190.536V47Z"/>
+    <path class="cls-12" d="M243,46l41-23,41,24L284.232,70.3Z"/>
+  </g>
+  <g>
+    <path class="cls-13" d="M325,23l41.768,24.3V237L325,213V23Z"/>
+    <path id="Rectangle_36_copy-3" data-name="Rectangle 36 copy" class="cls-14" d="M407,24L366.013,46.938V237L407,213.536V24Z"/>
+    <path class="cls-15" d="M325,23L366,0l41,24L366.232,47.3Z"/>
+  </g>
+</svg>
